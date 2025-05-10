@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+}
+
+body {
+	text-align: center;
+	margin: 0;
+}
+
+.calculator {
+	border: 1px solid green;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 50px;
+	border-radius: 40px;
+	width: 400px;
+}
+
+.screen {
+	border: 1px solid violet;
+	height: 70px;
+	border-radius: 15px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 30px;
+	padding-right: 10px;
+}
