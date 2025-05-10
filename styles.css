@@ -12,21 +12,64 @@ body {
 }
 
 .calculator {
-	border: 1px solid green;
+	border: 4px solid rgb(0, 0, 0);
+	background-color: rgb(60, 134, 88);
 	margin-left: auto;
 	margin-right: auto;
-	padding: 50px;
+	padding: 20px 30px;
 	border-radius: 40px;
 	width: 400px;
 }
 
 .screen {
-	border: 1px solid violet;
+	border: 1px solid rgb(58, 11, 58);
 	height: 70px;
 	border-radius: 15px;
+	background-color: rgb(209, 242, 223);
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	font-size: 30px;
 	padding-right: 10px;
+	margin-bottom: 30px;
+}
+
+.buttons {
+	display: flex;
+	border-radius: 15px;
+	justify-content: center;
+	padding: 10px;
+}
+
+button {
+	padding: 25px;
+	border-radius: 70px;
+	color: rgb(209, 242, 223);
+}
+
+.row {
+	display: flex;
+}
+#null{
+	flex: 1;
+}
+
+#equal{
+	flex: 9;
+}
+
+.operator {
+	background-color: brown;
+}
+
+.digit, .equal {
+	background-color: #1A6C83;
+}
+.operators, .digits {
+	display: flex;
+	flex-direction: column;
+}
+
+.row, .operators, .digits, .buttons {
+	gap: 15px;
 }
