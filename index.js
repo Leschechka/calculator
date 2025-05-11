@@ -1,15 +1,3 @@
-const nullBtn = document.getElementById('null')
-const oneBtn = document.getElementById('one')
-const twoBtn = document.getElementById('two')
-const threeBtn = document.getElementById('three')
-const fourBtn = document.getElementById('four')
-const fiveBtn = document.getElementById('five')
-const sixBtn = document.getElementById('six')
-const sevenBtn = document.getElementById('seven')
-const eightBtn = document.getElementById('eight')
-const nineBtn = document.getElementById('nine')
-
-
 const divideBtn = document.getElementById('divide')
 const multiplyBtn = document.getElementById('multiply')
 const minusBtn = document.getElementById('minus')
@@ -63,10 +51,9 @@ const handleOperator = (event) => {
 
 const handleSecondNumber = (event) => {
   if (checkIfHasOperator) {
-    
+    // what if user inputs 0 at first
   }
-}
-
+};
 const operators = document.querySelectorAll('.operator')
 for (let operator of operators) {
   operator.addEventListener('click', handleOperator)
