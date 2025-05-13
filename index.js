@@ -12,11 +12,12 @@ const operators = {
 
 const firstNumSpan = document.getElementById('operand1');
 const digitsEventFirstNum = (event) => {
-	if (operatorSpan.innerText == '' && secondNumSpan.innerText == '')
-	if (firstNumSpan.innerText == '0') {
-		firstNumSpan.innerText = event.target.innerText
-	} else {
-		firstNumSpan.innerText += event.target.innerText
+	if (operatorSpan.innerText.length == 0) {
+		if (firstNumSpan.innerText == '0') {
+			firstNumSpan.innerText = event.target.innerText
+		} else {
+			firstNumSpan.innerText += event.target.innerText
+		}
 	}
 }
 
@@ -31,7 +32,7 @@ const addDigitsListenerForFirstNum = () => {
 const operatorSpan = document.getElementById('operator');
 const operatorsEvent = (event) => {
 	if (secondNumSpan.innerText == '') {
-		operatorSpan.innerText = event.target.innerText
+		operatorSpan.innerText = event.target.innerText;
 	}
 }
 
@@ -44,7 +45,23 @@ const addOperatorsListener = () => {
 }
 
 const secondNumSpan = document.getElementById('operand2');
+const digitsEventSecondNum = event => {
+  if (operatorSpan.innerText.length == 1)
+    if (secondNumSpan.innerText == '0') {
+      secondNumSpan.innerText = event.target.innerText
+    } else {
+      secondNumSpan.innerText += event.target.innerText
+    }
+}
+
+const addDigitsListenerForSecondNum = () => {
+  const digitBtns = document.querySelectorAll('.digit')
+  for (const digit of digitBtns) {
+    digit.addEventListener('click', digitsEventSecondNum)
+  }
+};
 
 
 addDigitsListenerForFirstNum();
 addOperatorsListener();
+addDigitsListenerForSecondNum();
