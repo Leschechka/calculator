@@ -47,21 +47,22 @@ body {
 .buttons {
 	display: flex;
 	border-radius: 15px;
-	justify-content: center;
-	padding: 10px;
+	padding-right: 5px;
+	flex-wrap: wrap;
 }
 
-.operators, .digits {
-	display: flex;
-	flex-direction: column;
-}
 
 .row {
 	display: flex;
+	flex: 1;
+}
+
+.red {
+	flex: 1;
 }
 
 button {
-	padding: 27px;
+	padding: 24px;
 	border-radius: 10px;
 	color: rgb(209, 242, 223);
 	border-right: solid rgb(9, 50, 4) 5px;
@@ -89,10 +90,7 @@ button:active {
 	border-left: solid rgb(9, 50, 4) 3px;
 }
 
-#equal {
-	flex: 1;
-}
 
-.row, .operators, .digits, .buttons {
+.row, .buttons {
 	gap: 5px;
 }
