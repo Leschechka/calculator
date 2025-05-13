@@ -3,11 +3,16 @@ const substract = (a, b) => a - b
 const multiply = (a, b) => a * b
 const divide = (a, b) => a / b
 
-const firstNumSpan = document.getElementById('operand1');
-const operatorSpan = document.getElementById('operator');
-const secondNumSpan = document.getElementById('operand2');
+const operators = {
+	'+': add,
+	'-': substract,
+	'×': multiply,
+	'÷': divide,
+}
 
+const firstNumSpan = document.getElementById('operand1');
 const digitsEventFirstNum = (event) => {
+	if (operatorSpan.innerText == '' && secondNumSpan.innerText == '')
 	if (firstNumSpan.innerText == '0') {
 		firstNumSpan.innerText = event.target.innerText
 	} else {
@@ -22,4 +27,24 @@ const addDigitsListenerForFirstNum = () => {
 	}
 };
 
-addDigitsListenerForFirstNum()
+
+const operatorSpan = document.getElementById('operator');
+const operatorsEvent = (event) => {
+	if (secondNumSpan.innerText == '') {
+		operatorSpan.innerText = event.target.innerText
+	}
+}
+
+
+const addOperatorsListener = () => {
+	const operatorBtns = document.querySelectorAll('.operator');
+	for (const operator of operatorBtns) {
+		operator.addEventListener('click', operatorsEvent)
+	}
+}
+
+const secondNumSpan = document.getElementById('operand2');
+
+
+addDigitsListenerForFirstNum();
+addOperatorsListener();
