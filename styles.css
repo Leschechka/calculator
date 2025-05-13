@@ -70,15 +70,15 @@ button {
 	font-weight: bold;
 }
 
-.digit {
+.blue{
 	background-color: #1A6C83;
 }
 
-.operator, #equal, #clear {
+.red {
 	background-color: brown;
 }
 
-button:hover, #equal:hover, #clear:hover {
+button:hover{
 	border-color: #580e5a;
 	background-color: goldenrod;
 	color: #0e0f5a;
@@ -87,9 +87,12 @@ button:hover, #equal:hover, #clear:hover {
 button:active {
 	border-right: solid rgb(9, 50, 4) 4px;
 	border-left: solid rgb(9, 50, 4) 3px;
+}
 
+#equal {
+	flex: 1;
 }
 
 .row, .operators, .digits, .buttons {
-	gap: 25px;
+	gap: 5px;
 }
