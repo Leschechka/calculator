@@ -117,9 +117,23 @@ const undoChoice = () => {
     return 
 	}
 }
+undoBtn.addEventListener('click', undoChoice);
 
-undoBtn.addEventListener('click', undoChoice)
+const decimalPointBtn = document.getElementById('decimal-point');
+const addDecimalPoint = () => {
+	if (operatorSpan.innerText == '' && firstNumSpan.innerText.length > 0) {
+		if (!firstNumSpan.innerText.includes('.')) {
+			firstNumSpan.innerText += '.'
+		}
+	}
 
+	if (operatorSpan.innerText != '' && secondNumSpan.innerText.length > 0) {
+		if (!secondNumSpan.innerText.includes('.')) {
+			secondNumSpan.innerText += '.'
+		}
+	}
+}
+decimalPointBtn.addEventListener('click', addDecimalPoint)
 addDigitsListenerForFirstNum();
 addOperatorsListener();
 addDigitsListenerForSecondNum();
