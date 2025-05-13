@@ -53,11 +53,13 @@ const addDigitsListenerForSecondNum = () => {
 
 
 const resetBtn = document.getElementById('clear');
-resetBtn.addEventListener('click', () => {
+const resetCalculator = () => {
 	firstNumSpan.innerText = '0';
 	operatorSpan.innerText = '';
 	secondNumSpan.innerText = '';
-})
+}
+
+resetBtn.addEventListener('click', resetCalculator)
 
 
 const operate = (num1, operator, num2) => {
@@ -77,6 +79,13 @@ const operate = (num1, operator, num2) => {
 
 const updateNumbers = (event) => {
 	if (firstNumSpan.innerText.length > 0 && operatorSpan.innerText.length > 0 && secondNumSpan.innerText.length > 0) {
+		if (operatorSpan.innerText == '÷' && secondNumSpan.innerText == '0') {
+			firstNumSpan.innerText = 'DIVISION BY ZERO ERROR!';
+			secondNumSpan.innerText = '';
+			operatorSpan.innerText = '';
+			setTimeout(resetCalculator, 3000);
+			return
+		}
 		const result = operate(firstNumSpan.innerText, operatorSpan.innerText, secondNumSpan.innerText)
 		firstNumSpan.innerText = result;
 		if (event.target.innerText == '=') {
