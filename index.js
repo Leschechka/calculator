@@ -95,6 +95,30 @@ const addOperationsListener = () => {
 	}
 }
 
+const undoBtn = document.getElementById('undo');
+const undoChoice = () => {
+	if (secondNumSpan.innerText.length > 0) {
+		const string = secondNumSpan.innerText;
+		secondNumSpan.innerText = string.slice(0, string.length - 1)
+		return
+	}
+
+	if (operatorSpan.innerText.length > 0) {
+		operatorSpan.innerText = ''
+		return 
+	}
+
+	if (firstNumSpan.innerText.length > 1) {
+		const string = firstNumSpan.innerText
+    firstNumSpan.innerText = string.slice(0, string.length - 1)
+    return
+	} else if (firstNumSpan.innerText.length == 1) {
+		firstNumSpan.innerText = '0'
+    return 
+	}
+}
+
+undoBtn.addEventListener('click', undoChoice)
 
 addDigitsListenerForFirstNum();
 addOperatorsListener();
