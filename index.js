@@ -62,6 +62,13 @@ const addDigitsListenerForSecondNum = () => {
 };
 
 
+const resetBtn = document.getElementById('clear');
+resetBtn.addEventListener('click', () => {
+	firstNumSpan.innerText = '0';
+	operatorSpan.innerText = '';
+	secondNumSpan.innerText = '';
+})
+
 addDigitsListenerForFirstNum();
 addOperatorsListener();
 addDigitsListenerForSecondNum();
